@@ -1,3 +1,11 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+<!-- APlayer Music Player container -->
+<div id="aplayer" class="aplayer-container"></div>
+
+
 <!DOCTYPE html>
 
 
@@ -45,7 +53,72 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.0.0"></head>
+<meta name="generator" content="Hexo 7.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+<head>
+  <style>
+    .aplayer .aplayer-info {
+        background-color: #ffffff; /* 更改背景颜色 */
+        color: #333333; /* 更改文本颜色 */
+        margin-left: 75px;
+        padding: 14px 7px 0 10px;    
+    }
+
+    .aplayer {
+        width: 50%; /* 播放器宽度 */
+        border-radius: 10px; /* 圆角边框 */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 添加阴影 */
+    }
+
+    .aplayer .aplayer-pic {
+        width: 80px; /* 封面图片的宽度 */
+        position: static;
+    }
+    
+    @media (max-width: 600px) {
+        .aplayer {
+            width: 50%; /* 移动设备上全宽 */
+        }
+    }
+
+    .aplayer {
+      position: fixed;   /* 固定位置 */
+      bottom: 10px;      /* 距离底部10像素 */
+      right: 10px;       /* 距离右侧10像素 */
+      z-index: 9999;     /* 确保播放器显示在其他内容之上 */
+  }
+
+    .aplayer-container {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 60px; /* 设置播放器的初始宽度，足以显示图标或部分界面 */
+        height: auto; /* 根据内容自动调整高度 */
+        z-index: 9999;
+        overflow: hidden;
+        transition: width 0.5s ease; /* 平滑过渡动画 */
+    }
+    
+    .aplayer-container:hover {
+        width: 300px; /* 展开的宽度 */
+    }
+
+    .artitalk_main .power {
+      text-align: left;
+      color: #999;
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: 0.75em;
+      padding: 0.5em 0;
+    }
+
+  </style>
+</head>
+
 
 <body>
   
@@ -164,7 +237,7 @@
       
         <a class="archive-link" href="/archives/2023/12 ">
           December 2023 
-          <div class="archive-count">1 </div>
+          <div class="archive-count">2 </div>
         </a>
       
     </div>
@@ -177,6 +250,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/12/04/1/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/12/01/hello-world/" title="Hello World" >
             <div class="recent-link-text">
@@ -285,5 +364,43 @@
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+
+  <!-- APlayer Music Player -->
+  <div id="aplayer"></div>
+  <script>
+    var ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        audio: [{
+            name: '手写的从前',
+            artist: '周杰伦',
+            url: '/music/sxdcq.mp3',
+            cover: '/cover/sxdcq.png'
+        }]
+    });
+
+    var aplayerContainer = document.getElementById('aplayer');
+
+    var ap = new APlayer({
+        container: aplayerContainer,
+        audio: [{
+            name: '手写的从前',
+            artist: '周杰伦',
+            url: '/music/sxdcq.mp3',
+            cover: '/cover/sxdcq.png'
+        }],
+    });
+
+  </script>
+
+  <!-- 引用 artitalk -->
+  <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+  <!-- 存放说说的容器 -->
+  <div id="artitalk_main"></div>
+  <script>
+  new Artitalk({
+      appId: 'MpWEuj2e3MIuRQJ56xyou25Z-MdYXbMMI', // Your LeanCloud appId
+      appKey: 'TWNpQHwPYQvSeGb6ePegvckY' // Your LeanCloud appKey
+  })
+  </script>
 </body>
 </html>

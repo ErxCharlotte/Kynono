@@ -326,6 +326,34 @@ body {
 #main-grid.right-sidebar {
   grid-template-columns: auto min(30%, var(--sidebar-width));
 }
+#artitalk_main .power {
+  text-align: left;
+  color: #999;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 0.75em;
+  padding: 0.5em 0;
+  color: var(--link);
+}
+#artitalk_main .power a {
+  color: oklch(0.8 0.15 19.17);
+}
+#artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+  background: var(--link);
+}
+#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel {
+  background: oklch(0.8 0.15 19.17);
+}
+#operare_artitalk .at_button,
+#artitalk_main .at_button {
+  background-color: var(--link);
+}
+#artitalk_main .cbp_tmtimeline>li .cbp_tmlabel:after {
+  border-right-color: oklch(0.8 0.15 19.17);
+}
+#artitalk_main .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+  border-right-color: var(--link);
+}
 #main-grid {
   display: grid;
   max-width: 1200px;
