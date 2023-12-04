@@ -2977,3 +2977,15 @@ input[type="range"] {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+#animated-cursor {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  z-index: 10000;
+  pointer-events: none;
+  display: none;
+  background-size: cover;
+}
+* {
+  cursor: none !important;
+}
