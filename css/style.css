@@ -2986,6 +2986,3 @@ input[type="range"] {
   display: none;
   background-size: cover;
 }
-* {
-  cursor: none !important;
-}
